@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - /srv/docker/mongodb/data:/data/db
+
+  app:
+    container_name: app
+    restart: always
+    env_file: .env
+    build:
+      context: ./app
+    depends_on:
+      - mongodb
+    ports:
+      - "80:80"
