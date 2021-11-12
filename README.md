@@ -4,6 +4,9 @@
 * docker
 * linux + bash
 
+# Application uses in memory cache with built-in support of resolving cache stampede
+# Link https://github.com/jodydonetti/ZiggyCreatures.FusionCache
+
 # 1. Build + run application
 ```
 ./run.sh
